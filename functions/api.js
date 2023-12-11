@@ -386,13 +386,8 @@ router.post('/deleteCars', (req, res) => {
         }
 
     })
+
 })
 
-// ---------------------------</Delete>------------------------------
-
-
-
-
-app.listen(5000, () => { console.log('run') })
-app.use('/netlify/functions/api', router)
-module.exports.handler= serverless(app)
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => { console.log('run') })
