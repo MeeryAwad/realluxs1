@@ -3,7 +3,7 @@ const app = express();
 const multer = require('multer')
 const db = require('../config/database')
 var cors = require('cors');
-const serverless=  require('serverless-http')
+
 
 const { Event, Event1, Event2, Event3 } = require('../models/Event')
 
@@ -24,7 +24,7 @@ const corsOption = {
 app.use(cors(corsOption))
 
 //------------------------------------------------------------------
-
+app.use(express.static(__dirname + '/'));
 
 // ---------------------------<GET>---------------------------
 router.get('/', (req, res) => {
